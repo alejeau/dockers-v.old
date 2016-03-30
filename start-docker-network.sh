@@ -1,10 +1,12 @@
-
 docker network create custom_net
 
 # docker run -ti -d --name dut --net="custom_net|a12e1fc38e52f8e6dc9cd87e6cde47e35b5bb2b2c2bdf50ea0b82becaf9b943c" alejeau/docker-ut
 # docker run -ti -d --name cdb --net="custom_net|a12e1fc38e52f8e6dc9cd87e6cde47e35b5bb2b2c2bdf50ea0b82becaf9b943c" computer-db
-docker run -ti -d --name dut --net=custom_net alejeau/docker-ut
-docker run -ti -d --name cdb --net=custom_net computer-db
+
+# docker run -ti -d --name dut --net=custom_net alejeau/docker-ut
+docker run -ti -d --name dut -v /home/excilys/.m2/repository:/root/.m2/repository --net=custom_net alejeau/docker-ut
+docker run -ti -d --name cdb --net=custom_net mysql-db
+# docker run -ti -d --name cdb --net=custom_net computer-db
 
 # docker network connect isolated_nw c1
 # docker network connect isolated_nw c2
