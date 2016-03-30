@@ -1,3 +1,0 @@
-sudo docker cp install/computer-database/ alejeau/docker-ut:home/computer-database/
-sudo docker cp install/run.sh alejeau/docker-ut:run.sh
-
